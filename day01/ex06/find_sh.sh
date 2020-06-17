@@ -1,1 +1,1 @@
-find . -iname "*.sh"
+find . -iname "*.sh" | sed "s/\.sh//"
