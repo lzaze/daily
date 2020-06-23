@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzaze <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/19 11:11:11 by lzaze             #+#    #+#             */
-/*   Updated: 2020/06/20 10:48:09 by lzaze            ###   ########.fr       */
+/*   Created: 2020/06/23 09:09:30 by lzaze             #+#    #+#             */
+/*   Updated: 2020/06/23 09:09:57 by lzaze            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,24 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	int		i;
-	int 	tn;
-	int		number
-	tn = nb;
-	i = 0;
-	number = 0;
-	while (number == 0)
+	int mod;
+	if (nb <= 9 && nb >= 0)
 	{
-		if (!(tn < 10))
-		{
-			tn = tn / 10;
-			i += 1;
-		}
-		else
-		{
-			number = 1;
-		}
+		ft_putchar('0' + nb);
 	}
 
-	while (nb[i] != '\0')
+	else if (nb >= 10)
 	{
-		ft_putchar(nb[i]+48);
-		i++
+		mod = (nb % 10);
+		nb = (nb / 10);
+		ft_putnbr(nb);
+		ft_putchar('0' + mod);
 	}
-}
 
-int main()
-{
-	ft_putnbr(42);
-	return 0;
+	else
+	{
+		ft_putchar('-');
+		nb = nb * -1;
+		ft_putnbr(nb);
+	}
 }
