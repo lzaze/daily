@@ -6,35 +6,34 @@
 /*   By: lzaze <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 11:53:35 by lzaze             #+#    #+#             */
-/*   Updated: 2020/06/23 12:17:12 by lzaze            ###   ########.fr       */
+/*   Updated: 2020/06/23 13:35:03 by lzaze            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-void	*ft_strrev(char *str)
+char	*ft_strrev(char *str)
 {
+	char	t;
+	int		j;
 	int		i;
 
 	i = 0;
+	j = 0;
+
 	while (str[i] != '\0')
 	{
 		i++;
 	}
 
-	int		j;
-	j = i;
-	while (i >= 0)
+	i--;
+
+	while (i >= j)
 	{
+		t = str[j];
 		str[j] = str[i];
+		str[i] = t;
+		j++;
 		i--;
 	}
-	return (str);
-}
 
-int		main()
-{
-	char str;
-	ft_strrev("abc");
-	printf("%s\n",str);
-	return 0;
+	return (str);
 }
