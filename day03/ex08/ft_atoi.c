@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lzaze <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/21 10:35:19 by lzaze             #+#    #+#             */
-/*   Updated: 2020/06/26 13:38:34 by lzaze            ###   ########.fr       */
+/*   Created: 2020/06/23 16:02:27 by lzaze             #+#    #+#             */
+/*   Updated: 2020/06/23 16:42:36 by lzaze            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-void	ft_ft(int *nbr)
+
+int		ft_atoi(char *str)
 {
-	int		nb;
-	nb = 42;
-	nbr = &nb;
-	printf("%d", *nbr);
+	int		i;
+	int		n;
+	int		j;
+	
+	while (str[i] != '\0')
+	{
+		i++
+	}
+
+	n = 10 ^ i;
+	j = 1;
+	while (i > 0)
+	{
+		(str[i - 1] - '0');
+	}
+
+
 }
 
 int main()
 {
-	int *nb;
-	ft_ft(nb);
+	char str[] = "123";
+	int nb = ft_atoi(str);
+	printf("%d\n", nb);
 	return 0;
 }
